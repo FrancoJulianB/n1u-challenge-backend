@@ -2,3 +2,5 @@
 ## Middleware
 express
 express-validator
+multer
+mongoose

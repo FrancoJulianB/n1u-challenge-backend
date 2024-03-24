@@ -1,11 +1,5 @@
-const logRequest = (req, res, next) => {
-    console.log(`Solicitud recibida: ${req.method} ${req.url}`);
-    next();
-};
+const morgan = require('morgan');
 
-const logError = (err, req, res, next) => {
-    console.error(`Error durante la solicitud: ${err.stack}`);
-    next(err);
-};
+const requestLogger = morgan('dev');
 
-module.exports = { logRequest, logError };
+module.exports = requestLogger;
