@@ -1,11 +1,12 @@
 const express = require("express");
 const { check } = require("express-validator");
+const upload = require("../middleware/multerUpload.js"); 
 const router = express.Router();
 const {getProducts, getProduct, createProduct, updateProduct, deleteProduct} = require("../controllers/productController.js");
 
 // Validate product fields
 const validateProduct = [
-  check("photo").notEmpty().withMessage("La foto es requerida"),
+  upload.single("photo"),
   check("name").notEmpty().withMessage("El nombre es requerido"),
   check("price").notEmpty().withMessage("El precio es requerido"),
   check("category").notEmpty().withMessage("La categoría es requerida"),

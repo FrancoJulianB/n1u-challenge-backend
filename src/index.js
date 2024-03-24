@@ -1,24 +1,21 @@
 // Middleware
 const express = require('express');
-const app = express();
 const mongoose = require("mongoose");
-const Restaurant = require("./models/restaurant.js");
 const Product = require(   "./models/product.js")
-const restaurantsRoute = require("./routes/restaurantRoutes.js");
 const productRoute = require("./routes/productRoutes.js");
-const { logRequest, logError } = require("./middleware/logRequest");
+const Restaurant = require("./models/restaurant.js");
+const restaurantsRoute = require("./routes/restaurantRoutes.js");
+const requestLogger = require('./middleware/logRequest.js');
 
+const app = express();
 
 app.use(express.json());
-app.use(logRequest);
-app.use(logError);
+app.use(requestLogger);
 
 // routes
 
 app.use("/products", productRoute);
 app.use("/restaurants", restaurantsRoute);
-
-
 app.get("/", (req, res) => {
     res.send("Welcome visitor!");
 });

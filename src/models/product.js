@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const ProductSchema = new mongoose.Schema({
     photo: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
         required: true,
     },
     name: {
