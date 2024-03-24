@@ -1,24 +1,46 @@
+// Middleware
 const express = require('express');
-const mongoose = require("mongoose");
-const path = require('path')
-require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
-const mongoURI = `mongodb://localhost/mongodb/n1u-challenge`;
 const app = express();
+const mongoose = require("mongoose");
+const Restaurant = require("./models/restaurant.js");
+const Product = require(   "./models/product.js")
+const restaurantsRoute = require("./routes/restaurantRoutes.js");
+const productRoute = require("./routes/productRoutes.js");
 const port = process.env.PORT || 9000;
+const path = require('path')
+const { logRequest, logError } = require("./middleware/logRequest");
+
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
+
+app.use(express.json());
+app.use(logRequest);
+app.use(logError);
 
 // routes
+
+app.use("/products", productRoute);
+app.use("/restaurants", restaurantsRoute);
+
+// app.get("/restaurants", async (req, res) => {
+//     try {
+//         const restaurants = await Restaurant.find();
+//         res.json(restaurants);
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).json({ message: "Error al obtener los restaurantes" });
+//     }
+// });
+
 app.get("/", (req, res) => {
     res.send("Welcome visitor!");
-  });
+});
 
 // mongodb
+const mongoURI = process.env.MONGODB_URI || "mongodb://mongodb/n1u-challenge";
+
 mongoose
-    .connect(mongoURI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    })
+    .connect(mongoURI)
     .then(() => console.log("Connected to MongoDB"))
     .catch((error) => console.error("Connection error", error));
-
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
