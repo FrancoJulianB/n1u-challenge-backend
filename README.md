@@ -46,10 +46,20 @@ La aplicación utiliza varios middleware para funcionalidades adicionales:
 - `morgan`: Registro de solicitudes HTTP.
 - `multer`: Gestión y validacion de archivos en formularios multipart/form-data.
 
+## Puntos de mejora
+
+Se reconocen los siguientes puntos a mejorar en el estado actual del proyecto:
+
+- En la estructura del objeto Restaurante, seria mas performante tener un array de productos para facilitar la busqueda de los mismos.
+- Los endpoints deberian tener requerir un token, y realizar la validacion correspondiente para acceder a ellos.
+- No se realiza ninguna validacion de si ya existe un objeto (tanto restaurante como producto) con los mismos atributos.
+- En cuanto a organizacion, los puntos a desarrollar deberian ser publicos en github issues.
+
 ## Estado Actual
 
 Actualmente se esta implementando un IDP con la herramienta de Keycloak para validar el acceso a los endpoints.
 Se en este repositorio encontrara una rama llamada "idp-implementation" donde podra ver el avance del mismo.
+
 
 Ademas, si lo desea, puede acceder al tablero kanban donde vera los issues en los que estoy trabajando a través del siguiente [link](https://www.notion.so/Challenge-N1U-BackEnd-Dev-5a62c0ab5e2b4e439a962ac58df3619e?pvs=4)
 
