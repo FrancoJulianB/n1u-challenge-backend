@@ -37,21 +37,48 @@ Docker es una plataforma de software que simplifica el desarrollo, implementaci�
 
 ## Rutas de la Aplicación
 
-Se proporciona un [archivo](n1u-challenge.postman_collection.json) `.json` con la collection lista para importar en Postman. Sin perjuicio de ello, los endpoints de la aplicacion se ejecutan sobre el puerto 9000 y son los siguientes:
+Se proporciona un [archivo](n1u-challenge.postman_collection.json) `.json` con la colección lista para importar en Postman. Sin perjuicio de ello, los endpoints de la aplicación se ejecutan sobre el puerto 9000 y son los siguientes:
 
 ### Rutas de Restaurantes
-- `POST /api/restaurants`: Crea un restaurante nuevo.
-- `GET /api/restaurants`: Obtiene todos los restaurantes.
-- `GET /api/restaurants/:id`: Obtiene un restaurante por su ID.
-- `DELETE /api/restaurants/:id`: Elimina un restaurante por su ID.
-- `PUT /api/restaurants/:id`: Actualiza un restaurante por su ID.
+- `POST /restaurant`: Crea un restaurante nuevo.
+  - **Campos requeridos**:
+    - `photo`: Imagen del restaurante.
+    - `name`: Nombre del restaurante.
+    - `address`: Dirección del restaurante.
+    - `open_hours`: Horario de apertura del restaurante.
+- `GET /restaurant`: Obtiene todos los restaurantes.
+- `GET /restaurant/:id`: Obtiene un restaurante por su ID.
+- `DELETE /restaurant/:id`: Elimina un restaurante por su ID.
+- `PUT /restaurant/:id`: Actualiza un restaurante por su ID.
+  - **Campos requeridos**:
+    - `photo`: Imagen del restaurante.
+    - `name`: Nombre del restaurante.
+    - `address`: Dirección del restaurante.
+    - `open_hours`: Horario de apertura del restaurante.
 
 ### Rutas de Productos
-- `POST /api/products`: Crea un producto nuevo.
-- `GET /api/products`: Obtiene todos los productos.
-- `GET /api/products/:id`: Obtiene un producto por su ID.
-- `DELETE /api/products/:id`: Elimina un producto por su ID.
-- `PUT /api/products/:id`: Actualiza un producto por su ID.
+- `POST /product`: Crea un producto nuevo.
+  - **Campos requeridos**:
+    - `photo`: Imagen del producto.
+    - `name`: Nombre del producto.
+    - `price`: Precio del producto.
+    - `category`: Categoría del producto.
+  - **Campos opcionales**:
+    - `description_offer`: Descripción de la oferta del producto.
+    - `price_offer`: Precio de la oferta del producto.
+    - `days_offer`: Días de la semana en los que se aplica la oferta del producto.
+    - `valid_hours_offer`: Horas en las que se aplica la oferta del producto.
+- `GET /product`: Obtiene todos los productos.
+- `GET /product/:id`: Obtiene un producto por su ID.
+- `DELETE /product/:id`: Elimina un producto por su ID.
+- `PUT /product/:id`: Actualiza un producto por su ID.
+  - **Campos requeridos**:
+    - `photo`: Imagen del producto.
+    - `name`: Nombre del producto.
+    - `price`: Precio del producto.
+    - `category`: Categoría del producto.
+
+Nota: Para que los métodos `POST` funcionen correctamente en la colección de Postman, asegúrate de agregar una imagen nueva en el campo correspondiente.
 
 ## Middleware Utilizado
 
