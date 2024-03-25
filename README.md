@@ -102,7 +102,7 @@ Se reconocen los siguientes puntos a mejorar en el estado actual del proyecto:
 ## Estado Actual
 
 Actualmente se esta implementando un IDP con la herramienta de Keycloak para validar el acceso a los endpoints.
-Se en este repositorio encontrara una rama llamada "idp-implementation" donde podra ver el avance del mismo.
+En este repositorio encontrara una rama llamada "idp-implementation" donde podra ver el avance del mismo.
 
 
 Ademas, si lo desea, puede acceder al tablero kanban donde vera los issues en los que estoy trabajando a través del siguiente [link](https://www.notion.so/Challenge-N1U-BackEnd-Dev-5a62c0ab5e2b4e439a962ac58df3619e?pvs=4)
