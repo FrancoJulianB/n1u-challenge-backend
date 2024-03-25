@@ -35,15 +35,16 @@ Docker es una plataforma de software que simplifica el desarrollo, implementaci�
 - `terraform plan`
 - `terraform apply --auto-approve`
 
+
 ## Middleware Utilizado
 
 La aplicación utiliza varios middleware para funcionalidades adicionales:
 
 - `body-parser`: Analiza los cuerpos de las solicitudes entrantes en varios formatos y los expone en `req.body`.
 - `express-validator`: Proporciona funciones para validar y sanear los datos de las solicitudes HTTP.
-- `mongoose`: ODM (Object-Document Mapper) para MongoDB, proporciona una interfaz sencilla y basada en esquemas para interactuar con la base de datos.
-- `morgan`: Middleware de registro de solicitudes HTTP.
-- `multer`: Middleware para la gestión de archivos en formularios multipart/form-data.
+- `mongoose`: Proporciona una interfaz sencilla y basada en esquemas para interactuar con la base de datos.
+- `morgan`: Registro de solicitudes HTTP.
+- `multer`: Gestión y validacion de archivos en formularios multipart/form-data.
 
 ## Estado Actual
 
