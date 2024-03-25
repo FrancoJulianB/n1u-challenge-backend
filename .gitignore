@@ -1,4 +1,5 @@
 /node_modules
+/n1u-app/node_modules
 .env
 .terraform
 .terraform.lock.hcl

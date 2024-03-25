@@ -2,7 +2,7 @@ resource "docker_image" "node_api" {
   name = "node-api:latest"
 
   build {
-    context    = "../" 
+    context    = "../n1u-app/" 
     dockerfile = "../Dockerfile"
   }
 }

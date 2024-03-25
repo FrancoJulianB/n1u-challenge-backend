@@ -10,14 +10,6 @@ const validateProduct = [
   check("name").notEmpty().withMessage("El nombre es requerido"),
   check("price").notEmpty().withMessage("El precio es requerido"),
   check("category").notEmpty().withMessage("La categoría es requerida"),
-  check("description_offer")
-    .notEmpty()
-    .withMessage("La descripción de la oferta es requerida"),
-  check("price_offer").notEmpty().withMessage("El precio de la oferta es requerido"),
-  check("days_offer").isArray({ min: 1 }).withMessage("Se requieren días de oferta"),
-  check("valid_hours_offer")
-    .isArray({ min: 1 })
-    .withMessage("Se requieren horas válidas de oferta"),
 ];
 
 // Create a product

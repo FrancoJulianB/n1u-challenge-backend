@@ -38,7 +38,8 @@ const createProduct = async (req, res) => {
     // Create product with reference to the saved image
     const product = await Product.create({
       ...req.body,
-      ...(savedImage && { photo: savedImage._id }), // Add photo field only if image is provided
+      // Add photo field only if image is provided
+      ...(savedImage && { photo: savedImage._id }), 
     });
     res.status(200).json(product);
   } catch (error) {

@@ -1,9 +1,9 @@
 // Middleware
 const express = require('express');
 const mongoose = require("mongoose");
-const Product = require(   "./models/product.js")
+// const Product = require(   "./models/product.js")
 const productRoute = require("./routes/productRoutes.js");
-const Restaurant = require("./models/restaurant.js");
+// const Restaurant = require("./models/restaurant.js");
 const restaurantsRoute = require("./routes/restaurantRoutes.js");
 const requestLogger = require('./middleware/logRequest.js');
 
