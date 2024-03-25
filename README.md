@@ -1,6 +1,6 @@
 # n1u Challenge Backend
 
-Este repositorio contiene el backend y la infraestructura para la aplicación del challenge de n1u. La aplicación está desarrollada en Node.js utilizando Express.js para el enrutamiento y middleware como body-parser, express-validator, mongoose, morgan y multer para funcionalidades adicionales.
+Este repositorio contiene el backend y la infraestructura para la aplicación del challenge de n1u. La aplicación está desarrollada en Node.js utilizando Express.js para el enrutamiento y middleware como body-parser, express-validator, mongoose, morgan y multer para funcionalidades adicionales y nginx para crear un balanceador de carga.
 
 ## Requisitos Previos
 
