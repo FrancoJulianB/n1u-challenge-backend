@@ -37,7 +37,7 @@ Docker es una plataforma de software que simplifica el desarrollo, implementaci√
 
 ## Rutas de la Aplicaci√≥n
 
-Se proporciona un [archivo](n1u-challenge.postman_collection.json) `.json` con la collection lista para importar en Postman. Sin perjuicio de ello, los endpoints de la aplicacion son los siguientes:
+Se proporciona un [archivo](n1u-challenge.postman_collection.json) `.json` con la collection lista para importar en Postman. Sin perjuicio de ello, los endpoints de la aplicacion se ejecutan sobre el puerto 9000 y son los siguientes:
 
 ### Rutas de Restaurantes
 - `POST /api/restaurants`: Crea un restaurante nuevo.
