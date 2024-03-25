@@ -1,0 +1,436 @@
+{
+	"info": {
+		"_postman_id": "8f813f61-6a42-47a0-aa99-f59b6ba62cc1",
+		"name": "n1u-challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22936057"
+	},
+	"item": [
+		{
+			"name": "Restaurants",
+			"item": [
+				{
+					"name": "Create restaurant",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const JSONResponse = JSON.parse(responseBody);",
+									"",
+									"pm.collectionVariables.set(\"restaurant_id\", JSONResponse._id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/Users/francobarrera/Downloads/524850.jpg"
+								},
+								{
+									"key": "name",
+									"value": "Don Julio",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Calle Falsa 123",
+									"type": "text"
+								},
+								{
+									"key": "open_hours",
+									"value": "Lunes a Viernes: 12:00 - 22:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/restaurants",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"restaurants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ALL restaurants",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/restaurants",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"restaurants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update restaurant",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/Users/francobarrera/Downloads/524850.jpg"
+								},
+								{
+									"key": "name",
+									"value": "Don Julio updated",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Calle Falsa 123",
+									"type": "text"
+								},
+								{
+									"key": "open_hours",
+									"value": "Lunes a Viernes: 12:00 - 22:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/restaurants/{{restaurant_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"restaurants",
+								"{{restaurant_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restaurant by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/restaurants/{{restaurant_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"restaurants",
+								"{{restaurant_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restaurant",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"value": "https://example.com/restaurant.jpg",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Don Julio",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Calle Falsa 123",
+									"type": "text"
+								},
+								{
+									"key": "open_hours",
+									"value": "Lunes a Viernes: 12:00 - 22:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/restaurants/{{restaurant_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"restaurants",
+								"{{restaurant_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Create product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const JSONResponse = JSON.parse(responseBody);",
+									"",
+									"pm.collectionVariables.set(\"product_id\", JSONResponse._id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/Users/francobarrera/Downloads/0w2kcAVNO_1200x630__1.jpg"
+								},
+								{
+									"key": "name",
+									"value": "Asado",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "20000",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "carne",
+									"type": "text"
+								},
+								{
+									"key": "restaurant",
+									"value": "6601bf3194d63c21a9dc049b",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/products",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ALL products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJYVFZXTFpTUmR2MkZRN1ZVTm1KcXNzOXh0SVJiMHU3Mk9mV1lwblltYmFjIn0.eyJleHAiOjE3MTEzMzkwNzIsImlhdCI6MTcxMTMzOTAxMiwianRpIjoiNWY0N2M5ZWItYzQ5ZS00NjEyLTg1ODgtYzllMmZmNWE4OGFlIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9tYXN0ZXIiLCJzdWIiOiIwYWE3NDBkNy00NTdiLTRiNzMtOWMwZS0xM2EzZjcwNDU4ODgiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzZXNzaW9uX3N0YXRlIjoiYjZiMmQ3NGEtMjhhNC00N2Q3LTkyNTQtMDA5MDkwZmE0YmJmIiwiYWNyIjoiMSIsInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6ImI2YjJkNzRhLTI4YTQtNDdkNy05MjU0LTAwOTA5MGZhNGJiZiIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoibjF1YWRtaW4ifQ.IIm2miWH-UOiGj9qtsOqPYTZFN9Qx_p4fsIJWY88gPAuUEXGibbo--xr_3v8-vI73enxJowoEj012dzqIoEk98lCQCS1E7cum1iNzrV40RKQ7SDqwgEeQ6wz6rv0m1gW8qs46a3q3vI6I1ekyPkD4O9rYydUafzLqV-jIbhCV9HMw9F3baISdpUNfRNxLqp4m4cM0tOBkaTR3jb6TB8BirdCGQ5_Nzj2hjsmI6NOlWABtVM_txKGhShO8oJIn1-AuEmkbN9_q57iDi4EDHlhy2fDLsN0WCh0RUa8imNllqGAQ5TGLsCrqKckRsPwm2Oa3dN1WlocTk8iGZrLA4wQ4Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/products",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/Users/francobarrera/Downloads/0w2kcAVNO_1200x630__1.jpg"
+								},
+								{
+									"key": "name",
+									"value": "Asado",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "20000",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "carne de vaca",
+									"type": "text"
+								},
+								{
+									"key": "restaurant",
+									"value": "6601bf3194d63c21a9dc049b",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/products/{{product_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"{{product_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/products/{{product_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"{{product_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"value": "https://example.com/restaurant.jpg",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Don Julio",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Calle Falsa 123",
+									"type": "text"
+								},
+								{
+									"key": "open_hours",
+									"value": "Lunes a Viernes: 12:00 - 22:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/products/{{product_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"{{product_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:9000",
+			"type": "string"
+		},
+		{
+			"key": "restaurant_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "product_id",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
