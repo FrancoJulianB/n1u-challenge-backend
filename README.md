@@ -35,6 +35,23 @@ Docker es una plataforma de software que simplifica el desarrollo, implementaci√
 - `terraform plan`
 - `terraform apply --auto-approve`
 
+## Rutas de la Aplicaci√≥n
+
+Se proporciona un [archivo](n1u-challenge.postman_collection.json) `.json` con la collection lista para importar en Postman. Sin perjuicio de ello, los endpoints de la aplicacion son los siguientes:
+
+### Rutas de Restaurantes
+- `POST /api/restaurants`: Crea un restaurante nuevo.
+- `GET /api/restaurants`: Obtiene todos los restaurantes.
+- `GET /api/restaurants/:id`: Obtiene un restaurante por su ID.
+- `DELETE /api/restaurants/:id`: Elimina un restaurante por su ID.
+- `PUT /api/restaurants/:id`: Actualiza un restaurante por su ID.
+
+### Rutas de Productos
+- `POST /api/products`: Crea un producto nuevo.
+- `GET /api/products`: Obtiene todos los productos.
+- `GET /api/products/:id`: Obtiene un producto por su ID.
+- `DELETE /api/products/:id`: Elimina un producto por su ID.
+- `PUT /api/products/:id`: Actualiza un producto por su ID.
 
 ## Middleware Utilizado
 
